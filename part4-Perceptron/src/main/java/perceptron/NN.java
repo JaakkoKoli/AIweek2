@@ -11,7 +11,7 @@ public class NN {
     }
  
     public int classify(double[] img) {
-        Random rand = new Random();
+
         double minD=Integer.MAX_VALUE;
         int res=0;
         for (int i=0;i<5000;i++) {

@@ -12,16 +12,16 @@ public class YourEvaluator extends Evaluator {
 			for(int y = 0; y < p.board[x].length; ++y) {
 				if(p.board[x][y] == Position.Empty) continue;
 				if(p.board[x][y] == Position.WKing) ret += 1e9+((x>0&&x<6)?10:0)+((y>0&&y<6)?10:0);
-				if(p.board[x][y] == Position.WQueen) ret += 200+((x>1&&x<5&&y>1&&y<5)?3:0)+((x>2&&x<4&&y>2&&y<4)?10:0);
-				if(p.board[x][y] == Position.WRook) ret += 100+((x>1&&x<5&&y>1&&y<5)?5:0);
+				if(p.board[x][y] == Position.WQueen) ret += 200+((x>1&&x<5&&y>1&&y<5)?3:0)+((x>2&&x<4&&y>2&&y<4)?5:0);
+				if(p.board[x][y] == Position.WRook) ret += 100+((x>1&&x<5&&y>1&&y<5)?5:0)+((x>2&&x<4&&y>2&&y<4)?10:0);
 				if(p.board[x][y] == Position.WBishop) ret += 60+((x>1&&x<5&&y>1&&y<5)?5:0);
-				if(p.board[x][y] == Position.WKnight) ret += 60+((x>1&&x<5&&y>1&&y<5)?5:0);
+				if(p.board[x][y] == Position.WKnight) ret += 60+((x>1&&x<5&&y>1&&y<5)?2:0);
 				if(p.board[x][y] == Position.WPawn) ret += 15*(y)+((x>1&&x<5)?1:0);
 				if(p.board[x][y] == Position.BKing) ret -= 1e9+((x>0&&x<6)?10:0)+((y>0&&y<6)?10:0);
-				if(p.board[x][y] == Position.BQueen) ret -= 200+((x>1&&x<5&&y>1&&y<5)?3:0)+((x>2&&x<4&&y>2&&y<4)?10:0);
-				if(p.board[x][y] == Position.BRook) ret -= 100+((x>1&&x<5&&y>1&&y<5)?5:0);
+				if(p.board[x][y] == Position.BQueen) ret -= 200+((x>1&&x<5&&y>1&&y<5)?3:0)+((x>2&&x<4&&y>2&&y<4)?5:0);
+				if(p.board[x][y] == Position.BRook) ret -= 100+((x>1&&x<5&&y>1&&y<5)?5:0)+((x>2&&x<4&&y>2&&y<4)?10:0);
 				if(p.board[x][y] == Position.BBishop) ret -= 60+((x>1&&x<5&&y>1&&y<5)?5:0);
-				if(p.board[x][y] == Position.BKnight) ret -= 60+((x>1&&x<5&&y>1&&y<5)?5:0);
+				if(p.board[x][y] == Position.BKnight) ret -= 60+((x>1&&x<5&&y>1&&y<5)?2:0);
 				if(p.board[x][y] == Position.BPawn) ret -= 15*(6-y)+((x>1&&x<5)?1:0);
 			}
 		}
